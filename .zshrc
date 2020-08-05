@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/matrix/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -75,7 +75,23 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git extract python pip docker golang colored-man-pages zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(
+    git
+    extract
+    python
+    pip
+    docker
+    golang
+    colored-man-pages
+    zsh-syntax-highlighting
+    zsh-autosuggestions
+    autojump
+    command-not-found
+    fd
+    fzf
+    tmux
+    alias-finder
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -106,10 +122,17 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export TERM="xterm-256color"
 
-# autojump
-source /usr/share/autojump/autojump.sh
-# fd
-alias fd=fdfind
+case "$OSTYPE" in
+    darwin*)
+        export PATH="/usr/local/opt/llvm/bin:$PATH"
+    ;;
+    linux*)
+        # autojump
+        source /usr/share/autojump/autojump.sh
+        # fd
+        alias fd=fdfind
+    ;;
+esac
 
 # fzf
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
