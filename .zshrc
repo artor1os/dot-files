@@ -91,6 +91,7 @@ plugins=(
     fzf
     tmux
     alias-finder
+    github
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -141,11 +142,11 @@ alias pc=proxychains
 # fzf
 
 vim_fzf() {
-    vim $(fzf)
+    vim $(fd --type f --hidden --follow --exclude .git . $1 | fzf)
 }
 
 cd_fzf() {
-    cd $(fd --type d --hidden --follow --exclude .git | fzf)
+    cd $(fd --type d --hidden --follow --exclude .git . $1 | fzf)
 }
 
 git_checkout_fzf() {
