@@ -125,17 +125,20 @@ export TERM="xterm-256color"
 case "$OSTYPE" in
     darwin*)
         export PATH="/usr/local/opt/llvm/bin:$PATH"
+        export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
     ;;
     linux*)
         # autojump
         source /usr/share/autojump/autojump.sh
         # fd
         alias fd=fdfind
+        export FZF_DEFAULT_COMMAND='fdfind --type f --hidden --follow --exclude .git'
     ;;
 esac
 
+# proxychains
+alias pc=proxychains
 # fzf
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
 vim_fzf() {
     vim $(fzf)
