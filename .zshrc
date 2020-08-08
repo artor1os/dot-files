@@ -134,6 +134,8 @@ case "$OSTYPE" in
         # fd
         alias fd=fdfind
         export FZF_DEFAULT_COMMAND='fdfind --type f --hidden --follow --exclude .git'
+        # wsl
+        export DISPLAY=:0
     ;;
 esac
 
@@ -158,6 +160,15 @@ alias vzsh="vim ~/.zshrc"
 alias vvim="vim ~/.vim/vimrc"
 alias cdf=cd_fzf
 alias gcf=git_checkout_fzf
+
+_cmake_export_compile_configure() {
+    mkdir build && cd build
+    cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..
+    cp compile_commands.json ..
+    cd ..
+}
+
+alias cmc=_cmake_export_compile_configure
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
