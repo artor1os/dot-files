@@ -136,6 +136,7 @@ case "$OSTYPE" in
         export FZF_DEFAULT_COMMAND='fdfind --type f --hidden --follow --exclude .git'
         # wsl
         export DISPLAY=:0
+        export PATH="/opt/riscv/bin:$PATH"
     ;;
 esac
 
@@ -172,3 +173,6 @@ alias cmc=_cmake_export_compile_configure
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
