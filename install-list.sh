@@ -11,4 +11,5 @@ LIST=(
     autojump
 )
 
+echo "Installing ${LIST}..."
 sudo apt install -y ${LIST}
