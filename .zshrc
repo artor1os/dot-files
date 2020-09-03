@@ -132,8 +132,10 @@ case "$OSTYPE" in
         # autojump
         source /usr/share/autojump/autojump.sh
         # fd
-        alias fd=fdfind
-        export FZF_DEFAULT_COMMAND='fdfind --type f --hidden --follow --exclude .git'
+        FD=fd
+        [[ -f ~/.cargo/bin/fd ]] || FD=fdfind
+        alias fd=$FD
+        export FZF_DEFAULT_COMMAND="$FD --type f --hidden --follow --exclude .git"
         # wsl
         export DISPLAY=:0
         export PATH="/opt/riscv/bin:$PATH"
@@ -176,3 +178,10 @@ alias cmc=_cmake_export_compile_configure
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+
+[[ ! -f ~/.zshrc-local ]] || source ~/.zshrc-local
+
+_curl_cheat() {
+    curl -q cht.sh/$1
+}
+alias cht=_curl_cheat
