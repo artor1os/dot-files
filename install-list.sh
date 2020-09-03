@@ -1,14 +1,22 @@
 #!/bin/bash
 
 LIST=(
-    vim
+    # utilities
     git
-    tmux
     silversearcher-ag
-    build-essential
     fzf
     openssh-server
     autojump
+    # dependencies
+    build-essential
+    autoconf
+    automake
+    pkg-config
+    libevent-dev
+    libncurses5-dev
+    libncursesw5-dev
+    bison
+    flex
 )
 
 echo "Installing ${LIST}..."
