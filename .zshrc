@@ -182,6 +182,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 [[ ! -f ~/.zshrc-local ]] || source ~/.zshrc-local
 
 _curl_cheat() {
-    curl -q cht.sh/$1
+    curl -s cht.sh/$1
 }
 alias cht=_curl_cheat
