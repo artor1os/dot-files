@@ -178,6 +178,7 @@ alias cmc=_cmake_export_compile_configure
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="/usr/local/go/bin:$HOME/go/bin:$PATH"
 
 [[ ! -f ~/.zshrc-local ]] || source ~/.zshrc-local
 
