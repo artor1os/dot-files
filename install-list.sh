@@ -17,6 +17,7 @@ LIST=(
     libncursesw5-dev
     bison
     flex
+    libssl-dev
 )
 
 echo "Installing ${LIST}..."

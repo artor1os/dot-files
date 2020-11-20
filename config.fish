@@ -10,3 +10,5 @@ abbr -a -U pc proxychains
 abbr -a -U vfish vim ~/.config/fish/config.fish
 abbr -a -U vvim vim ~/.vim/vimrc
 
+# starship
+starship init fish | source

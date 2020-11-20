@@ -7,4 +7,6 @@
 omf install https://github.com/jhillyerd/plugin-git
 [[ ! -f ~/.config/fish/config.fish ]] || rm ~/.config/fish/config.fish
 
+[[ -f ~/.cargo/bin/starship ]] || (echo "Installing starship..." && cargo install starship)
+
 ln -s $(realpath $(dirname $0))/config.fish ~/.config/fish/config.fish
