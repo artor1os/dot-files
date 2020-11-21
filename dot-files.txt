@@ -1,0 +1,4 @@
+config.fish: $HOME/.config/fish/config.fish
+starship.toml: $HOME/.config/starship.toml
+.tmux.conf: $HOME/.tmux.conf
+.zshrc: $HOME/.zshrc
