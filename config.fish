@@ -9,6 +9,19 @@ if status --is-login
     set -x PATH $PATH /usr/local/go/bin $HOME/go/bin
 end
 
+# PROJECT_PATHS for pj
+set -gx PROJECT_PATHS ~/src ~/workspace
+
+# Other envs
+set -x EDITOR vim
+
+# Custom useful functions
+
+function download_github -a group repo dir
+    proxychains git clone https://github.com/$group/$repo {$dir}; or \
+       git clone https://github.com/$group/$repo {$dir}
+end
+
 # abbr
 abbr -a -U pc proxychains
 abbr -a -U vfish vim ~/.config/fish/config.fish

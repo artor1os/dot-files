@@ -9,7 +9,12 @@ else
 end
 
 # fisher plugins
-set -l plugins gazorby/fish-abbreviation-tips jethrokuan/z decors/fish-colored-man
+set -l plugins \
+   gazorby/fish-abbreviation-tips\
+   jethrokuan/z\
+   decors/fish-colored-man\
+   markcial/upto\
+   oh-my-fish/plugin-pj
 for plug in $plugins
     if test -z (fisher list $plug)
         echo "Installing $plug..."
