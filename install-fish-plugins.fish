@@ -31,3 +31,11 @@ if test ! -f ~/.cargo/bin/starship
 else
     echo "Starship installed."
 end
+
+if test -f ~/.config/starship.toml
+    echo "Removing starship toml..."
+    rm ~/.config/starship.toml
+end
+
+echo "Linking starship toml..."
+ln -s (realpath (dirname (status filename)))/starship.toml ~/.config/starship.toml
