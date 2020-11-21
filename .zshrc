@@ -186,3 +186,5 @@ _curl_cheat() {
     curl -s cht.sh/$1
 }
 alias cht=_curl_cheat
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
