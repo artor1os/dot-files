@@ -1,4 +1,4 @@
-# replace greeting with fortune
+# Replace greeting with fortune
 function fish_greeting
     fortune
 end
@@ -14,6 +14,9 @@ set -gx PROJECT_PATHS ~/src ~/workspace
 
 # Other envs
 set -x EDITOR vim
+if test -x $HOME/.cargo/bin/fd
+    set -x FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow --exclude .git'
+end
 
 # Custom useful functions
 
