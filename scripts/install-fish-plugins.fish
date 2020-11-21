@@ -24,11 +24,3 @@ for plug in $plugins
     end
 end
 
-# starship
-if test ! -f ~/.cargo/bin/starship
-    echo "Installing starship..."
-    cargo install starship
-else
-    echo "Starship installed."
-end
-
