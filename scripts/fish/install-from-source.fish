@@ -27,16 +27,16 @@ for i in (seq (count $src_list))
         case script
             echo "Use script $iargs to install $repo."
             cd $src_root/$group_and_name[2]; and \
-               bash -c $iargs
+               bash $iargs
         case make make_gen
             echo "Use make to install $repo."
             cd $src_root/$group_and_name[2]
             if $itype == make_gen
                 echo "Execute autogen.sh..."
-                bash -c autogen.sh
+                bash autogen.sh
             end
             echo "Configuring..."
-            bash -c configure
+            bash configure
             echo "Building and installing..."
             make; and sudo make intall
     end

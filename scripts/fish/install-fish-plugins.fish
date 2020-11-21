@@ -10,6 +10,7 @@ end
 
 # fisher plugins
 set -l plugins \
+   jorgebucaran/bax.fish\
    gazorby/fish-abbreviation-tips\
    jethrokuan/z\
    decors/fish-colored-man\
