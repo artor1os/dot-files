@@ -1,3 +1,7 @@
+# replace greeting with fortune
+function fish_greeting
+    fortune
+end
 # PATH
 if status --is-login
     set -x PATH $PATH $HOME/.yarn/bin $HOME/.config/yarn/global/node_modules/.bin

@@ -1,6 +1,8 @@
 #!/bin/bash
 
 LIST=(
+    # interesting stuff
+    fortune-mod # print adage
     # utilities
     git
     silversearcher-ag
