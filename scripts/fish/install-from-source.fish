@@ -31,14 +31,14 @@ for i in (seq (count $src_list))
         case make make_gen
             echo "Use make to install $repo."
             cd $src_root/$group_and_name[2]
-            if $itype == make_gen
+            if test $itype = "make_gen"
                 echo "Execute autogen.sh..."
                 bash autogen.sh
             end
             echo "Configuring..."
             bash configure
             echo "Building and installing..."
-            make; and sudo make intall
+            make; and sudo make install
     end
     echo "$repo installed."
 end
