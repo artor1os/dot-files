@@ -33,6 +33,14 @@ abbr -a -U vvim vim ~/.vim/vimrc
 # starship
 starship init fish | source
 
+# migrating from https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/tmux/tmux.plugin.zsh
+alias ta='tmux attach -t'
+alias tad='tmux attach -d -t'
+alias ts='tmux new-session -s'
+alias tl='tmux list-sessions'
+alias tksv='tmux kill-server'
+alias tkss='tmux kill-session -t'
+
 # migrating from https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/git/git.plugin.zsh
 
 # Will return the current branch name
@@ -45,7 +53,7 @@ end
 
 # Pretty log messages
 function _git_log_prettily
-    if ! [ -z $1 ] 
+    if ! [ -z $1 ]
         git log --pretty=$1
   end
 end
