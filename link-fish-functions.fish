@@ -1,19 +1,7 @@
 #!/usr/bin/fish
 
-set -l function_path (realpath (dirname (status filename)))/fish-functions
+source ./fish-functions/link-function.fish
 
-set -l target_path $HOME/.config/fish/functions
-
-mkdir -p $target_path
-
-for function in (ls $function_path)
-    set -l realfunction $function_path/$function
-    set -l realtarget $target_path/$function
-    if test -f $realtarget
-        echo "Removing existing target $realtarget"
-        rm $realtarget
-    end
-    echo "Linking $realfunction to $realtarget"
-    ln -s $realfunction $realtarget
+for file in fish-functions/*
+    link-function $file
 end
-
